@@ -10,7 +10,9 @@ describe("Welcome to Automation Testing Xevensolutions", () =>{
         cy.get('[class="paoc-close-popup paoc-popup-close"]').eq(0).click();   // popup close function
         cy.get(testobject.logo).should('be.visible')   // uses of page object model and use of assertions
         //cy.get(logoobject.logo).eq(1).click()
-        cy.get('[class="elementor-button elementor-button-link elementor-size-sm"]').eq(0).click();
+        // we use two way to click contact us button.One is way is to use get method and second is to use contains method see below
+        //cy.get('[class="elementor-button elementor-button-link elementor-size-sm"]').eq(0).click();   for contact us button click
+        cy.contains('Contact Us').click({force: true});     // for contact us button click
         cy.contains('Contact Us').should('exist')  // to check Contact us word is exist or not
         cy.get('[data-id="2bc8233"]').should('be.visible')   // to check it is a contact us form
         cy.get('[id="industries"]').select("Computer Vision");
@@ -24,11 +26,9 @@ describe("Welcome to Automation Testing Xevensolutions", () =>{
         cy.get('[data-name="your-message"]').type("Welcome To Automation Testing");
         cy.get('[type="checkbox"]').eq(0).check();
         cy.get('[type="checkbox"]').eq(1).check();
-        cy.pause();
-        cy.get('[type="submit"]').eq(0).click({force: true});
-
-
-
+        cy.get('[class="wpcf7-form-control wpcf7-submit has-spinner"]').eq(0).click({force: true});
+        cy.pause()
+        cy.get('[class="attachment-full size-full wp-image-77"]').click()
 
     });
 });

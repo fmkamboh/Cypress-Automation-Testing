@@ -12,7 +12,9 @@ module.exports = defineConfig({
       'cypress/e2e/1-getting-started/test02.cy.js',
       'cypress/e2e/1-getting-started/iframeTest.cy.js',
       'cypress/e2e/1-getting-started/cypresshooks.cy.js',
-      'cypress/e2e/1-getting-started/API-plugin.cy.js'
+      'cypress/e2e/1-getting-started/API-plugin.cy.js',
+      'cypress/e2e/1-getting-started/Within-and-contains-elements.cy.js',
+      'cypress/e2e/1-getting-started/Parent-child-find-selector-methods.cy.js'
     ],
     'env':{   // This is environment variable
       'username':'student',
